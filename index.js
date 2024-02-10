@@ -4,6 +4,8 @@ import express from "express";
 import cors from "cors";
 
 import router from "./routers/userrouters.js";
+
+import notesRoute from "./routers/notesrouters.js";
 // Importing dotenv
 import dotenv from "dotenv";
 dotenv.config();
@@ -21,9 +23,10 @@ app.get("/", (req, res) => {
     res.status(200).json("Sucessfully connected");
 });
 
-// connecting with api route
-app.use("/api", router);
-
+// connecting with api user route
+app.use("/api/user", router);
+// connecting with api notes route
+app.use("/api/notes",notesRoute );
 // connnection
 const startserver = async () => {
     await connectDB();
