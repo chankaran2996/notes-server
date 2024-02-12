@@ -17,5 +17,5 @@ const notes = mongoose.Schema(
 );
 
 // Exporting schema
-const Notes = mongoose.model("Qustions", notes);
+const Notes = mongoose.model("notes", notes);
 export default Notes;

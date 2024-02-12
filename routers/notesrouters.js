@@ -2,7 +2,7 @@
 import express from "express";
 
 // importing all controlles
-
+import { postNotes } from "../controllers/notesCntrolers.js";
 
 // creating new router object
 const notesRoute = express.Router();
@@ -18,7 +18,7 @@ notesRoute.get("/:id");
 // post methods
 
 // creating notes in DB
-notesRoute.post("/");
+notesRoute.post("/",postNotes);
 
 // delete methods
 
