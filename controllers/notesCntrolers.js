@@ -23,3 +23,17 @@ export const postNotes = async (req, res) => {
         return res.status(500).send({ error });
     }
 }
+
+export const getMethod = async (req,res) => {
+    try{
+        const id = req.params.id;
+        const notes = await Notes.find({ email: id })
+        if(notes){
+            res.status(200).json({notes});
+        }else{
+            res.status(500).json({"message":"can't find notes"});
+        }
+    } catch (error){
+        res.status(500).send({error});
+    }
+}
