@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 // connecting with api user route
 app.use("/api/user", router);
 // connecting with api notes route
-app.use("/api/notes",notesRoute );
+app.use("/api/notes", notesRoute);
 // connnection
 const startserver = async () => {
     await connectDB();
